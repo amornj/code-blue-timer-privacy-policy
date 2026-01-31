@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & User Guide - Code Blue Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: calc(100vh - 150px);
+        }
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .disclaimer strong {
+            color: #856404;
+        }
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        h3 {
+            color: #444;
+            font-size: 1.3em;
+            margin: 30px 0 15px 0;
+        }
+        h4 {
+            color: #555;
+            font-size: 1.1em;
+            margin: 20px 0 10px 0;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        a {
+            color: #667eea;
+        }
+        .toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .toc h3 {
+            margin-top: 0;
+        }
+        .toc ul {
+            columns: 2;
+            margin-bottom: 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 40px 0;
+        }
+        .mode-box {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+        .mode-box.track {
+            background: #f5f5f5;
+            border-left-color: #9e9e9e;
+        }
+        .tip {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .warning {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+        }
+        .footer a {
+            color: #667eea;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .container {
+                padding: 20px 15px;
+            }
+            .toc ul {
+                columns: 1;
+            }
+            table {
+                font-size: 0.9em;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        <h1>Support & User Guide</h1>
+        <p class="subtitle">CPR Timer - Realtime ACLS Coach & Tracker</p>
+    </div>
+
+    <div class="container">
+        <div class="disclaimer">
+            <strong>MEDICAL DISCLAIMER:</strong> This app is a tool to assist trained medical professionals during CPR. It is NOT a substitute for proper CPR training and certification. It is NOT intended for use by untrained individuals. Always follow your institution's protocols and guidelines. The developers assume no liability for clinical decisions made using this app.
+        </div>
+
+        <h2>App Overview</h2>
+        <p>CPR Timer is a professional tool designed to assist trained healthcare workers during cardiopulmonary resuscitation (CPR) procedures. The app helps track CPR cycles, manage medication timing, record events, and calculate important metrics like Chest Compression Fraction (CCF).</p>
+
+        <h3>Target Audience</h3>
+        <p>This app is designed for:</p>
+        <ul>
+            <li>Emergency medicine physicians</li>
+            <li>Intensive care unit staff</li>
+            <li>Anesthesiologists</li>
+            <li>Nurses and paramedics</li>
+            <li>Other trained healthcare professionals performing CPR</li>
+        </ul>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#core-features">Core Features</a></li>
+                <li><a href="#starting-session">Starting a CPR Session</a></li>
+                <li><a href="#during-session">During a CPR Session</a></li>
+                <li><a href="#session-controls">Session Controls</a></li>
+                <li><a href="#special-events">Special Events</a></li>
+                <li><a href="#ending-session">Ending a Session</a></li>
+                <li><a href="#records">Session Records</a></li>
+                <li><a href="#calculations">Understanding Calculations</a></li>
+                <li><a href="#settings">Settings & Customization</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact & Support</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="getting-started">Getting Started</h2>
+
+        <h3>First Time Setup</h3>
+        <ol>
+            <li>Download and install CPR Timer from the App Store</li>
+            <li>Open the app to see the main CPR Tracker interface</li>
+            <li>Choose your preferred mode: <strong>Coach</strong> or <strong>Track</strong>
+                <ul>
+                    <li><strong>Coach Mode</strong> (Default): Provides automatic alerts, voice prompts, and medication reminders</li>
+                    <li><strong>Track Mode</strong>: Manual tracking without automatic alerts</li>
+                </ul>
+            </li>
+            <li>Optionally sign in to save sessions to the cloud</li>
+        </ol>
+
+        <h3>Understanding the Interface</h3>
+        <p>The main screen shows:</p>
+        <ul>
+            <li><strong>Total CPR Time</strong>: Cumulative time since CPR started</li>
+            <li><strong>Current Cycle</strong>: 2-minute CPR cycles</li>
+            <li><strong>Event Banners</strong>: Pulse check, medications (Adrenaline, Amiodarone, Xylocaine)</li>
+            <li><strong>LUCAS Toggle</strong>: Activate when LUCAS device is in use</li>
+            <li><strong>Rhythm Selector</strong>: Choose between Shockable (VF/VT) or Non-shockable (PEA/Asystole)</li>
+            <li><strong>Statistics</strong>: Shock count, medication counts, and progress bars</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="core-features">Core Features</h2>
+
+        <h3>Coach Mode vs Track Mode</h3>
+
+        <div class="mode-box">
+            <h4>Coach Mode (Green toggle)</h4>
+            <ul>
+                <li>Automatic time-based alerts for medications</li>
+                <li>Configurable metronome beeping (100/110/120 BPM)</li>
+                <li>Voice alerts for pulse checks and medications (English/Thai)</li>
+                <li>Automatic medication reminders based on protocol timings</li>
+                <li>Audio feedback for actions</li>
+            </ul>
+        </div>
+
+        <div class="mode-box track">
+            <h4>Track Mode (Gray toggle)</h4>
+            <ul>
+                <li>Manual medication tracking</li>
+                <li>No automatic alerts or sounds</li>
+                <li>User must manually confirm or give medications</li>
+                <li>Event logging only</li>
+            </ul>
+        </div>
+
+        <p><strong>Switching Modes</strong>: Use the toggle switch at the top-right of the Cycle Tracker panel. The app will display a notification when you switch modes.</p>
+
+        <hr>
+
+        <h2 id="starting-session">Starting a CPR Session</h2>
+        <ol>
+            <li>Tap <strong>"Start CPR"</strong> button</li>
+            <li>The timer begins immediately</li>
+            <li>The app will:
+                <ul>
+                    <li>Start tracking total CPR time</li>
+                    <li>Begin 2-minute cycle countdown</li>
+                    <li>Start metronome (if in Coach mode)</li>
+                    <li>Activate event banners</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Adding Time Delay</h3>
+        <p>If CPR started before you opened the app:</p>
+        <ol>
+            <li>Open the hamburger menu (&#9776;)</li>
+            <li>Tap <strong>"Add Time Delay"</strong></li>
+            <li>Enter the number of minutes CPR was already in progress</li>
+            <li>Confirm - the timer will adjust retroactively</li>
+        </ol>
+
+        <hr>
+
+        <h2 id="during-session">During a CPR Session</h2>
+
+        <h3>Cycle Management</h3>
+        <ul>
+            <li>Each cycle lasts <strong>2 minutes</strong></li>
+            <li>The timer shows countdown to next cycle</li>
+            <li>Last 10 seconds show amber warning: "PREPARE FOR CYCLE CHANGE"</li>
+            <li>After 2 minutes, the cycle number increments automatically</li>
+        </ul>
+
+        <h3>Rhythm Selection</h3>
+        <p>Choose the cardiac rhythm:</p>
+
+        <p><strong>Shockable (VF/VT)</strong>:</p>
+        <ul>
+            <li>Enables shock delivery</li>
+            <li>Medications available: Adrenaline, Amiodarone, Lidocaine</li>
+            <li>Protocol follows shockable rhythm guidelines</li>
+        </ul>
+
+        <p><strong>Non-Shockable (PEA/Asystole)</strong>:</p>
+        <ul>
+            <li>Shock button disabled</li>
+            <li>Focus on compressions and medications</li>
+            <li>Banner shows: "Continue CPR"</li>
+        </ul>
+
+        <h3>LUCAS Device</h3>
+        <ul>
+            <li>Toggle LUCAS switch when activating the LUCAS device</li>
+            <li>When active, shocks do NOT count toward pause time (CCF calculation)</li>
+            <li>LUCAS banner turns blue when active</li>
+            <li>Located next to Pulse Check banner</li>
+        </ul>
+
+        <h3>Delivering Shocks</h3>
+        <ol>
+            <li>Ensure rhythm is set to "Shockable"</li>
+            <li>Select energy level:
+                <ul>
+                    <li><strong>Biphasic</strong>: 200J (adult) or Pediatric options</li>
+                    <li><strong>Monophasic</strong>: 360J</li>
+                </ul>
+            </li>
+            <li>Tap <strong>"Shock"</strong> button</li>
+            <li>Shock is logged with timestamp and energy level</li>
+            <li>Shock counter increments</li>
+        </ol>
+
+        <h3>Medication Administration</h3>
+
+        <h4>Adrenaline (1mg)</h4>
+        <p><strong>In Coach Mode</strong>:</p>
+        <ul>
+            <li>First dose: Alert after 4 minutes (configurable to 3 or 5 minutes)</li>
+            <li>Subsequent doses: Every 4 minutes (or your configured interval)</li>
+            <li>Audio alert and voice prompt when due</li>
+            <li>Tap <strong>"Confirm"</strong> when given, or <strong>"Dismiss"</strong> to skip</li>
+        </ul>
+
+        <p><strong>In Track Mode</strong>:</p>
+        <ul>
+            <li>Manually tap <strong>"Give"</strong> button when administering</li>
+            <li>No automatic alerts</li>
+        </ul>
+
+        <div class="tip">
+            <strong>Configuring Interval:</strong> Open hamburger menu &rarr; Under "Adrenaline Interval", select 3, 4, or 5 minutes. Setting applies to current and future doses.
+        </div>
+
+        <h4>Amiodarone</h4>
+        <p><strong>Protocol</strong>: 300mg first dose, then 150mg second dose (total 450mg)</p>
+        <p><strong>In Coach Mode</strong>:</p>
+        <ul>
+            <li>First dose (300mg): Alert after 3rd shock in shockable rhythm</li>
+            <li>Second dose (150mg): Alert after 5th shock</li>
+            <li>Voice alert when due</li>
+        </ul>
+
+        <h4>Lidocaine/Xylocaine</h4>
+        <p><strong>Protocol</strong>: Given after Amiodarone 450mg has been reached</p>
+        <p><strong>In Coach Mode</strong>:</p>
+        <ul>
+            <li>First dose (1mg/kg): Alert 5 minutes after amiodarone 450mg</li>
+            <li>Subsequent doses: Every 5 minutes</li>
+            <li>Maximum 3mg/kg cumulative dose</li>
+        </ul>
+
+        <h3>Pulse Checks</h3>
+        <p><strong>Timing</strong>: Every 2-minute cycle</p>
+        <p><strong>In Coach Mode</strong>: Automatic alert at end of each cycle with voice prompt.</p>
+        <p><strong>In Track Mode</strong>: Tap <strong>"Give"</strong> when performing pulse check.</p>
+
+        <h3>Recording Procedures</h3>
+        <p>During CPR, you can log procedures:</p>
+        <ol>
+            <li>Tap <strong>"+ Procedure"</strong> button</li>
+            <li>Select procedure type: ETT, Arterial Line, Central Line, Other</li>
+            <li>Procedure is timestamped and logged</li>
+            <li>ETT automatically adds 10 seconds to pause time (affects CCF)</li>
+        </ol>
+
+        <hr>
+
+        <h2 id="session-controls">Session Controls (Hamburger Menu)</h2>
+        <p>Access the hamburger menu (&#9776;) for additional controls:</p>
+
+        <h3>Session Controls</h3>
+        <ul>
+            <li><strong>Add Time Delay</strong>: Add retroactive CPR time if CPR started before app</li>
+            <li><strong>Language Toggle (EN/TH)</strong>: Switch between English and Thai voice alerts</li>
+        </ul>
+
+        <h3>Metronome Speed</h3>
+        <p>Select compression rate:</p>
+        <ul>
+            <li><strong>100 BPM</strong>: Standard rate</li>
+            <li><strong>110 BPM</strong>: Faster compressions</li>
+            <li><strong>120 BPM</strong>: High-performance rate</li>
+        </ul>
+
+        <h3>Adrenaline Interval</h3>
+        <p>Configure time between adrenaline doses:</p>
+        <ul>
+            <li><strong>3 minutes</strong>: Aggressive protocol</li>
+            <li><strong>4 minutes</strong>: Standard (default)</li>
+            <li><strong>5 minutes</strong>: Conservative</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="special-events">Special Events</h2>
+
+        <h3>ROSC (Return of Spontaneous Circulation)</h3>
+        <p>When ROSC is achieved:</p>
+        <ol>
+            <li>Tap <strong>"ROSC"</strong> button</li>
+            <li>Confirm in dialog</li>
+            <li>All alerts and sounds are suppressed</li>
+            <li>Banners turn green (completed state)</li>
+            <li>ROSC time is recorded</li>
+        </ol>
+
+        <h3>ECMO Run</h3>
+        <p>When ECMO is initiated:</p>
+        <ol>
+            <li>Select rhythm as "PEA" or "Asystole"</li>
+            <li>Open procedure menu</li>
+            <li>Select "ECMO Run"</li>
+            <li>All alerts and sounds are suppressed</li>
+            <li>CPR tracking continues for time calculations</li>
+        </ol>
+
+        <hr>
+
+        <h2 id="ending-session">Ending a Session</h2>
+
+        <h3>Steps to End Session</h3>
+        <ol>
+            <li>Tap <strong>"End Session"</strong> button</li>
+            <li>Confirm ending the session</li>
+            <li>Fill out the End CPR Session form</li>
+        </ol>
+
+        <h3>Required Information</h3>
+        <p><strong>Outcome</strong> (Required):</p>
+        <ul>
+            <li><strong>ROSC</strong>: Return of spontaneous circulation achieved</li>
+            <li><strong>Death</strong>: Patient declared deceased</li>
+            <li><strong>ECMO</strong>: Patient placed on ECMO</li>
+            <li><strong>Ongoing/Transfer</strong>: CPR continuing or patient transferred</li>
+        </ul>
+
+        <h3>Event Timing</h3>
+        <p><strong>Collapse Time (Time of Arrest)</strong>: Enter hours and minutes before CPR started. Leave blank if unknown (unwitnessed arrest).</p>
+        <p><strong>Bystander CPR Start Time</strong>: Enter when bystander CPR was started. Leave blank if no bystander CPR.</p>
+        <p><strong>Pause Duration Per Pulse Check</strong>: Estimate seconds paused for each pulse check. Default: 10 seconds. Used to calculate CCF.</p>
+
+        <h3>Patient Demographics (Optional)</h3>
+        <ul>
+            <li>Patient Name</li>
+            <li>Hospital Number (HN)</li>
+            <li>Hospital Name</li>
+            <li>Location (ER, ICU, OR, Ward, etc.)</li>
+            <li>Sex</li>
+            <li>Age</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="records">Session Records</h2>
+
+        <h3>Viewing Records</h3>
+        <ol>
+            <li>Ensure CPR session is ended (cannot access during active session)</li>
+            <li>Tap hamburger menu &rarr; <strong>"Records"</strong></li>
+            <li>View list of all saved sessions</li>
+        </ol>
+        <p class="warning"><strong>Note:</strong> Sign In Required - Records are only available for authenticated users.</p>
+
+        <h3>Record Information</h3>
+        <p>Each record shows: session date/time, total CPR duration, outcome, patient information, and CCF.</p>
+
+        <h3>Viewing Session Details</h3>
+        <p>Tap a record to view:</p>
+        <ul>
+            <li><strong>Overview Tab</strong>: CPR start/end time, outcome, collapse time, bystander CPR time, notes</li>
+            <li><strong>Timeline Tab</strong>: Chronological list of all events, color-coded by type</li>
+            <li><strong>Statistics Tab</strong>: Total CPR time, CCF, shocks, medications, procedures</li>
+        </ul>
+
+        <h3>Exporting Records</h3>
+        <ol>
+            <li>Open a record</li>
+            <li>Tap <strong>"Export HTML"</strong> button</li>
+            <li>HTML file is generated with complete session data</li>
+            <li>Suitable for printing or archiving</li>
+        </ol>
+
+        <hr>
+
+        <h2 id="calculations">Understanding Calculations</h2>
+
+        <h3>Chest Compression Fraction (CCF)</h3>
+        <p><strong>What It Measures:</strong> CCF represents the percentage of CPR time when chest compressions were actually being performed.</p>
+
+        <p><strong>Formula:</strong></p>
+        <pre>CCF = (Total CPR Time - Total Pause Time) / Total CPR Time x 100%</pre>
+
+        <p><strong>Pause Time Includes:</strong></p>
+        <ul>
+            <li>Pulse checks (default 10 seconds each, configurable)</li>
+            <li>ETT insertion (10 seconds)</li>
+            <li>Shocks (5 seconds each, unless LUCAS active)</li>
+            <li>Time after ROSC confirmed</li>
+            <li>Time during ECMO run</li>
+        </ul>
+
+        <p><strong>Target CCF:</strong> &ge;80% is considered high-quality CPR</p>
+
+        <div class="tip">
+            <strong>Improving CCF:</strong> Minimize pulse check duration, use LUCAS device, reduce pre-shock pauses, limit interruptions.
+        </div>
+
+        <hr>
+
+        <h2 id="settings">Settings & Customization</h2>
+
+        <h3>Metronome Speed</h3>
+        <p>Access: Hamburger menu &rarr; Metronome section. Options: 100, 110, 120 BPM. Applies to Coach mode only.</p>
+
+        <h3>Adrenaline Intervals</h3>
+        <p>Access: Hamburger menu &rarr; Adrenaline Interval section. Options: 3, 4, 5 minutes.</p>
+
+        <h3>Language Selection</h3>
+        <p>Access: Hamburger menu &rarr; Session Controls &rarr; EN/TH toggle. Only affects voice alerts, not interface.</p>
+
+        <hr>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+
+        <h3>Audio Issues</h3>
+        <p><strong>Metronome Not Playing:</strong></p>
+        <ul>
+            <li>Check device is not on silent mode</li>
+            <li>Verify volume is turned up</li>
+            <li>Check that Coach mode is enabled</li>
+            <li>Ensure session is started</li>
+            <li>Check that ROSC/ECMO are not active (suppresses audio)</li>
+        </ul>
+
+        <h3>Session Issues</h3>
+        <p><strong>Cannot Save Session:</strong> Must be signed in to save. Tap "End & Sign In to Save" if you're a guest.</p>
+        <p><strong>Cannot Access Records During Session:</strong> This is intentional - records are disabled during active CPR. End current session first.</p>
+
+        <h3>Alert Issues</h3>
+        <p><strong>Alerts Not Appearing When Expected:</strong></p>
+        <ul>
+            <li>Verify you're in Coach mode (not Track mode)</li>
+            <li>Check that rhythm is set correctly</li>
+            <li>Ensure ROSC/ECMO are not active</li>
+            <li>Check adrenaline interval setting</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h3>Can I use this app without internet?</h3>
+        <p>Yes. The app works completely offline for tracking CPR. Internet is only required for signing in, saving sessions to cloud, and syncing records across devices.</p>
+
+        <h3>How do I switch between Coach and Track mode during a session?</h3>
+        <p>Locate the toggle switch in the Cycle Tracker panel (top-right). Tap the switch to toggle. "Undo" option available for 4 seconds.</p>
+
+        <h3>What happens if I accidentally close the app?</h3>
+        <p><strong>During Active Session:</strong> Session state is maintained in browser memory. Reopen immediately: session continues. Extended close or force quit: session may be lost.</p>
+        <p><strong>Recommendation:</strong> Keep app open during CPR. Always save sessions before closing.</p>
+
+        <h3>Can I edit session data after saving?</h3>
+        <p><strong>Editable:</strong> Patient demographics, outcome, session notes.</p>
+        <p><strong>Not Editable:</strong> Timeline events, timestamps, collapse time, bystander CPR time, total CPR duration, CCF and statistics.</p>
+
+        <h3>Does the app replace CPR training?</h3>
+        <p><strong>NO</strong>. This app is a tool to assist trained medical professionals. Always follow your institution's protocols, current resuscitation guidelines, and your professional training and judgment.</p>
+
+        <h3>Why is CCF lower than expected?</h3>
+        <p>Common reasons: Multiple pulse checks, procedure insertions (ETT = 10 seconds), multiple shocks without LUCAS, extended pauses for rhythm checks, late ROSC confirmation.</p>
+
+        <hr>
+
+        <h2 id="contact">Contact & Support</h2>
+
+        <h3>Support Email</h3>
+        <p>For assistance, bug reports, or questions:</p>
+        <p><strong>Email:</strong> <a href="mailto:amornj@gmail.com">amornj@gmail.com</a></p>
+
+        <h3>Bug Reports</h3>
+        <p>When reporting bugs, please include:</p>
+        <ul>
+            <li>iOS version</li>
+            <li>Device model</li>
+            <li>App version</li>
+            <li>Steps to reproduce</li>
+            <li>Screenshots if applicable</li>
+            <li>What you expected vs. what happened</li>
+        </ul>
+
+        <h3>Feature Requests</h3>
+        <p>We welcome suggestions for improvements. Email us with detailed description, explain the use case, and why it would be valuable.</p>
+
+        <hr>
+
+        <h2>Data & Privacy</h2>
+        <p>For complete privacy details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h3>What Data Is Collected?</h3>
+        <p><strong>When signed in:</strong> CPR session data (timestamps, rhythms, outcomes, patient demographics if provided), email address, user ID.</p>
+
+        <h3>What Data Is NOT Collected?</h3>
+        <ul>
+            <li>Location data</li>
+            <li>Device information</li>
+            <li>Usage analytics (no tracking)</li>
+            <li>Audio recordings, photos, or videos</li>
+        </ul>
+
+        <h3>Data Sharing</h3>
+        <p>Data is NOT shared with third parties, NOT sold, NOT used for advertising. Only you can access your session records.</p>
+
+        <hr>
+
+        <h2>Legal</h2>
+
+        <h3>Medical Disclaimer</h3>
+        <p>This app is provided "as is" for informational and tracking purposes only. It is not intended to replace professional medical judgment, training, or institutional protocols. The developers make no warranties regarding accuracy, reliability, or fitness for any particular purpose. Use of this app is at your own risk.</p>
+
+        <h3>Liability</h3>
+        <p>The developers, contributors, and distributors of this app shall not be liable for any clinical decisions made using this tool, or for any outcomes resulting from its use. This app is a supplementary tool for trained medical professionals and does not constitute medical advice.</p>
+    </div>
+
+    <div class="footer">
+        <p><a href="index.html">&larr; Back to Home</a> | <a href="privacy.html">Privacy Policy</a></p>
+        <p>&copy; 2026 Phyathai 2 International Hospital</p>
+        <p>Contact: <a href="mailto:amornj@gmail.com">amornj@gmail.com</a></p>
+    </div>
+</body>
+</html>
